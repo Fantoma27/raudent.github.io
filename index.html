@@ -1,0 +1,1149 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raudent – Clinică Stomatologică | Râmnicu Vâlcea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ivory: #F9F6F0;
+            --cream: #EDE8DC;
+            --sage: #8FA68A;
+            --deep: #1A2420;
+            --gold: #C9A84C;
+            --text: #2C3830;
+            --muted: #7A8578;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ivory);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.4rem 5vw;
+            background: rgba(249,246,240,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(143,166,138,0.2);
+            animation: fadeDown 0.8s ease both;
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--deep);
+            text-decoration: none;
+        }
+
+            .logo span {
+                color: var(--sage);
+            }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+            .nav-links a {
+                font-size: 0.82rem;
+                font-weight: 500;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: var(--muted);
+                transition: color 0.3s;
+            }
+
+                .nav-links a:hover {
+                    color: var(--deep);
+                }
+
+        .nav-cta {
+            background: var(--deep);
+            color: var(--ivory) !important;
+            padding: 0.55rem 1.3rem;
+            border-radius: 2px;
+            color: var(--ivory);
+            transition: background 0.3s !important;
+        }
+
+            .nav-cta:hover {
+                background: var(--sage) !important;
+                color: var(--ivory) !important;
+            }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10rem 5vw 6rem 8vw;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--sage);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.3s ease both;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 5vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            color: var(--deep);
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.5s ease both;
+        }
+
+            .hero h1 em {
+                font-style: italic;
+                color: var(--sage);
+            }
+
+        .hero-sub {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--muted);
+            max-width: 380px;
+            margin-bottom: 2.8rem;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.7s ease both;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.9s ease both;
+        }
+
+        .btn-primary {
+            background: var(--deep);
+            color: var(--ivory);
+            border: none;
+            padding: 0.9rem 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+            .btn-primary:hover {
+                background: var(--sage);
+                transform: translateY(-2px);
+            }
+
+        .btn-outline {
+            border: 1.5px solid var(--deep);
+            color: var(--deep);
+            padding: 0.9rem 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+            background: transparent;
+        }
+
+            .btn-outline:hover {
+                background: var(--deep);
+                color: var(--ivory);
+                transform: translateY(-2px);
+            }
+
+        .hero-visual {
+            position: relative;
+            background: var(--cream);
+            overflow: hidden;
+        }
+
+            .hero-visual::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(ellipse at 70% 40%, rgba(143,166,138,0.25) 0%, transparent 60%), radial-gradient(ellipse at 30% 80%, rgba(201,168,76,0.12) 0%, transparent 50%);
+            }
+
+        .tooth-svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 55%;
+            opacity: 0;
+            animation: fadeScale 1.2s 0.6s ease both;
+        }
+
+        @keyframes fadeScale {
+            from {
+                opacity: 0;
+                transform: translate(-50%,-50%) scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(-50%,-50%) scale(1);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-accent {
+            position: absolute;
+            bottom: 3rem;
+            right: 4rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--muted);
+            writing-mode: vertical-rl;
+            letter-spacing: 0.15em;
+        }
+
+        /* STRIP */
+        .strip {
+    background: var(--deep);
+    color: var(--ivory);
+    padding: 1.2rem 5vw;
+    display: flex; align-items: center; gap: 3rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+
+  @media (max-width: 900px) {
+    .strip {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.9rem;
+      padding: 1.5rem 6vw;
+    }
+  }
+
+        .strip-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            white-space: nowrap;
+        }
+
+        .strip-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+            flex-shrink: 0;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 8rem 8vw;
+            position: relative;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--sage);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 300;
+            color: var(--deep);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+            .section-title em {
+                font-style: italic;
+                color: var(--sage);
+            }
+
+        .services-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: end;
+            margin-bottom: 5rem;
+        }
+
+            .services-header p {
+                color: var(--muted);
+                line-height: 1.7;
+                font-size: 1.5rem;
+            }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5px;
+            background: var(--cream);
+        }
+
+        .service-card {
+            background: var(--ivory);
+            padding: 2.8rem 2.2rem;
+            transition: background 0.3s, transform 0.3s;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .service-card::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--sage);
+                transition: width 0.4s ease;
+            }
+
+            .service-card:hover {
+                background: var(--cream);
+            }
+
+                .service-card:hover::after {
+                    width: 100%;
+                }
+
+        .service-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 1.5rem;
+            color: var(--sage);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--deep);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            line-height: 1.65;
+            color: var(--muted);
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 70vh;
+        }
+
+        .about-image {
+            background: var(--cream);
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+        }
+
+        .about-image-inner {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 40% 60%, rgba(143,166,138,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 20%, rgba(201,168,76,0.15) 0%, transparent 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .about-image-inner svg {
+                width: 55%;
+                opacity: 0.5;
+            }
+
+        .about-stat {
+            position: absolute;
+            bottom: 3rem;
+            left: 3rem;
+            background: var(--deep);
+            color: var(--ivory);
+            padding: 1.5rem 2rem;
+        }
+
+        .about-stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            line-height: 1;
+            color: var(--gold);
+        }
+
+        .about-stat-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-top: 0.3rem;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6rem 8vw 6rem 5rem;
+        }
+
+            .about-text p { font-size: 1.1rem; line-height: 1.75; color: var(--muted); margin-top: 1.rem; max-width: 420px; }
+
+        .about-features {
+            margin-top: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .about-feature { display: flex; align-items: center; gap: 1rem; font-size: 1.4rem; color: var(--text); }
+
+        .about-feature-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--sage);
+            flex-shrink: 0;
+        }
+
+        /* TEAM */
+        .team {
+            padding: 8rem 8vw;
+            background: var(--cream);
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+            .team-header p {
+                color: var(--muted);
+                font-size: 0.95rem;
+                margin-top: 1rem;
+            }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: var(--ivory);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+            .team-card:hover {
+                transform: translateY(-6px);
+            }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--cream);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--sage);
+            border: 2px solid var(--sage);
+        }
+
+        .team-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--deep);
+            margin-bottom: 0.4rem;
+        }
+
+        .team-card .role {
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+        }
+
+        /* CONTACT */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 70vh;
+        }
+
+        .contact-info {
+            background: var(--deep);
+            padding: 7rem 6vw 6rem 8vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .contact-info .section-label {
+                color: var(--sage);
+            }
+
+            .contact-info .section-title {
+                color: var(--ivory);
+            }
+
+                .contact-info .section-title em {
+                    color: var(--gold);
+                }
+
+        .contact-details {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(143,166,138,0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--sage);
+        }
+
+        .contact-item h4 {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-item p {
+            color: rgba(249,246,240,0.7);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .contact-form-section {
+            padding: 7rem 6vw 6rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .contact-form-section .section-label {
+                color: var(--sage);
+            }
+
+        .form-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--deep);
+            margin-bottom: 2.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+            .form-group label {
+                font-size: 0.75rem;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: var(--muted);
+            }
+
+            .form-group input, .form-group select, .form-group textarea {
+                border: 1.5px solid var(--cream);
+                background: var(--ivory);
+                padding: 0.8rem 1rem;
+                font-family: 'DM Sans', sans-serif;
+                font-size: 0.9rem;
+                color: var(--text);
+                outline: none;
+                transition: border-color 0.3s;
+                width: 100%;
+            }
+
+                .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+                    border-color: var(--sage);
+                }
+
+            .form-group textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep);
+            color: var(--ivory);
+            padding: 3rem 8vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(143,166,138,0.2);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: var(--ivory);
+        }
+
+            .footer-logo span {
+                color: var(--sage);
+            }
+
+        footer p {
+            font-size: 0.8rem;
+            color: rgba(249,246,240,0.4);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            .footer-links a {
+                font-size: 0.78rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: rgba(249,246,240,0.5);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .footer-links a:hover {
+                    color: var(--sage);
+                }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .services-header {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 300px;
+            }
+
+            .about-text {
+                padding: 4rem 6vw;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 5rem 6vw;
+            }
+
+            .contact-form-section {
+                padding: 4rem 6vw;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .services-header { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .about-image { min-height: 300px; }
+    .about-text { padding: 4rem 6vw; }
+    .team-grid { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; }
+    .contact-info { padding: 5rem 6vw; }
+    .contact-form-section { padding: 4rem 6vw; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { 
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--deep);
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      z-index: 99;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--deep);
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { color: var(--ivory); font-size: 1.1rem; }
+    .nav-cta { color: var(--ivory) !important; }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 101;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--deep);
+      transition: all 0.3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); background: var(--ivory); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); background: var(--ivory); }
+    footer { flex-direction: column; text-align: center; }
+  }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+  <a href="#" class="logo">Rau<span>dent</span></a>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links" id="navLinks">
+            <li><a href="#servicii">Servicii</a></li>
+            <li><a href="#despre">Despre</a></li>
+            <li><a href="#echipa">Echipă</a></li>
+            <li><a href="#contact" class="nav-cta">Programare</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <p class="hero-eyebrow">Clinică Stomatologică · Râmnicu Vâlcea</p>
+            <h1>Zâmbetul tău,<br><em>grija noastră</em></h1>
+            <p class="hero-sub">Îngrijire dentară modernă, personalizată și blândă. Vă așteptăm în clinica noastră din inima Râmnicului.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary">Fă o programare</a>
+                <a href="#servicii" class="btn-outline">Servicii noastre</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <svg class="tooth-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 20 C60 20, 25 45, 25 85 C25 110, 35 130, 45 150 C55 170, 58 200, 65 215 C70 225, 78 230, 86 225 C92 221, 95 210, 100 195 C105 210, 108 221, 114 225 C122 230, 130 225, 135 215 C142 200, 145 170, 155 150 C165 130, 175 110, 175 85 C175 45, 140 20, 100 20Z" stroke="#8FA68A" stroke-width="3" fill="rgba(143,166,138,0.08)" />
+                <path d="M70 60 C60 65, 45 75, 42 90" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+                <path d="M130 60 C140 65, 155 75, 158 90" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+                <circle cx="100" cy="80" r="20" stroke="#8FA68A" stroke-width="1.5" fill="none" opacity="0.4" />
+                <path d="M88 80 Q100 68 112 80 Q100 92 88 80" fill="rgba(143,166,138,0.2)" stroke="#8FA68A" stroke-width="1" />
+            </svg>
+            <p class="hero-accent">Sănătate · Frumusețe · Încredere</p>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="strip">
+        <div class="strip-item"><span class="strip-dot"></span><span>Luni–Vineri: 09:00 – 19:00</span></div>
+        <div class="strip-item"><span class="strip-dot"></span><span>Sâmbătă: 09:00 – 14:00</span></div>
+        <div class="strip-item"><span class="strip-dot"></span><span>0250 XXX XXX</span></div>
+        <div class="strip-item"><span class="strip-dot"></span><span>Râmnicu Vâlcea, Vâlcea</span></div>
+        <div class="strip-item"><span class="strip-dot"></span><span>Consultație gratuită prima vizită</span></div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicii">
+        <div class="services-header">
+            <div>
+                <p class="section-label">Servicii</p>
+                <h2 class="section-title">Tratamente<br>pentru un zâmbet <em>perfect</em></h2>
+            </div>
+            <p>Oferim o gamă completă de servicii stomatologice, de la prevenție și tratamente de urgență, până la proceduri estetice de ultimă generație.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="22" cy="22" r="18" />
+                    <path d="M14 22 L19 27 L30 16" />
+                </svg>
+                <h3>Stomatologie Generală</h3>
+                <p>Consultații preventive, obturații, extracții și îngrijire generală pentru sănătatea dentară pe termen lung.</p>
+            </div>
+
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 8 C14 8, 8 13, 8 20 C8 26, 11 30, 15 34 L22 40 L29 34 C33 30, 36 26, 36 20 C36 13, 30 8, 22 8Z" />
+                    <path d="M16 18 C16 18, 18 14, 22 14 C26 14, 28 18, 28 18" />
+                </svg>
+                <h3>Estetică Dentară</h3>
+                <p>Albire profesională, fațete ceramice și tratamente de conturare pentru zâmbetul pe care ți-l dorești.</p>
+            </div>
+
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="10" y="18" width="24" height="14" rx="2" />
+                    <path d="M14 18 L14 14 C14 11 18 8 22 8 C26 8 30 11 30 14 L30 18" />
+                    <line x1="22" y1="22" x2="22" y2="28" />
+                </svg>
+                <h3>Implanturi Dentare</h3>
+                <p>Implanturi de înaltă calitate, tratament planificat digital și rezultate durabile cu un aspect complet natural.</p>
+            </div>
+
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M10 28 L18 18 L26 24 L34 14" />
+                    <circle cx="34" cy="14" r="3" />
+                    <path d="M8 34 L36 34" />
+                </svg>
+                <h3>Ortodonție</h3>
+                <p>Aparate dentare fixe, aliniere transparentă (Invisalign) și retenere pentru un aliniament impecabil.</p>
+            </div>
+
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M22 36 C22 36, 10 28, 10 18 C10 12, 15 8, 22 8 C29 8, 34 12, 34 18 C34 28, 22 36, 22 36Z" stroke-dasharray="4 2" />
+                    <circle cx="22" cy="18" r="5" />
+                </svg>
+                <h3>Parodontologie</h3>
+                <p>Diagnosticarea și tratamentul bolilor parodontale, detartraj profesional și igienizare în profunzime.</p>
+            </div>
+
+            <div class="service-card">
+                <svg class="service-icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 32 L12 22 C12 14, 16 10, 22 10 C28 10, 32 14, 32 22 L32 32" />
+                    <path d="M8 32 L36 32 L36 36 L8 36 Z" />
+                    <line x1="18" y1="10" x2="18" y2="8" />
+                    <line x1="22" y1="10" x2="22" y2="7" />
+                    <line x1="26" y1="10" x2="26" y2="8" />
+                </svg>
+                <h3>Protetica Dentară</h3>
+                <p>Coroane, punți și proteze complete sau parțiale realizate din materiale premium pentru funcționalitate și estetică.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="despre">
+        <div class="about-image">
+            <div class="about-image-inner">
+                <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="150" cy="150" r="120" stroke="#8FA68A" stroke-width="1" opacity="0.3" />
+                    <circle cx="150" cy="150" r="80" stroke="#C9A84C" stroke-width="1" opacity="0.3" />
+                    <path d="M150 60 C110 60, 75 85, 75 120 C75 145, 88 165, 100 185 C112 205, 115 235, 125 250 C132 262, 143 268, 150 262 C157 268, 168 262, 175 250 C185 235, 188 205, 200 185 C212 165, 225 145, 225 120 C225 85, 190 60, 150 60Z" stroke="#8FA68A" stroke-width="2" fill="rgba(143,166,138,0.08)" />
+                </svg>
+            </div>
+            <div class="about-stat">
+                <div class="about-stat-num">10+</div>
+                <div class="about-stat-label">ani de experiență</div>
+            </div>
+        </div>
+        <div class="about-text">
+            <p class="section-label">Despre noi</p>
+            <h2 class="section-title">O clinică<br><em>dedicată</em> vouă</h2>
+            <p>Raudent s-a fondat cu o misiune simplă: să ofere îngrijire stomatologică de calitate europeană, accesibilă comunității din Râmnicu Vâlcea. Credem că un zâmbet sănătos schimbă vieți.</p>
+            <p>Echipa noastră de medici cu experiență internațională utilizează tehnologie digitală de ultimă generație — scanere 3D, radiologie digitală și design CAD/CAM — pentru precizie maximă și confort sporit.</p>
+            <div class="about-features">
+                <div class="about-feature"><span class="about-feature-dot"></span>Consultație inițială gratuită</div>
+                <div class="about-feature"><span class="about-feature-dot"></span>Echipamente digitale de ultimă generație</div>
+                <div class="about-feature"><span class="about-feature-dot"></span>Planuri de tratament personalizate</div>
+                <div class="about-feature"><span class="about-feature-dot"></span>Mediu steril certificat</div>
+                <div class="about-feature"><span class="about-feature-dot"></span>Opțiuni de finanțare disponibile</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team" id="echipa">
+        <div class="team-header">
+            <p class="section-label">Echipa noastră</p>
+            <h2 class="section-title">Medicii <em>voștri</em></h2>
+            <p>Profesioniști dedicați, cu formare continuă în cele mai recente tehnici și tehnologii dentare.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar">DR</div>
+                <h3>Dr. Stana Raul</h3>
+                <p class="role">Medic Primar Stomatolog</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">MV</div>
+                <h3>Dr. Mihai Voicu</h3>
+                <p class="role">Specialist Implantologie</p>
+            </div>
+            <div class="team-card">
+                <div class="team-avatar">LP</div>
+                <h3>Dr. Laura Popa</h3>
+                <p class="role">Ortodont</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Veniți să<br>ne <em>cunoașteți</em></h2>
+
+            <div class="contact-details">
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Adresă</h4>
+                        <p>Str. Exemplu nr. 12<br>Râmnicu Vâlcea, jud. Vâlcea</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.86 7.8 19.79 19.79 0 01.78 4.18 2 2 0 012.78 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Telefon</h4>
+                        <p>0250 XXX XXX<br>0745 XXX XXX</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>contact@raudent.ro<br>programari@raudent.ro</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Program</h4>
+                        <p>Luni–Vineri: 09:00 – 19:00<br>Sâmbătă: 09:00 – 14:00</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="contact-form-section">
+            <p class="section-label">Programare online</p>
+            <<h3 class="form-title">Pentru programări puteți suna la</h3>
+<p style="font-size:1.4rem; color:var(--sage); font-family:'Cormorant Garamond',serif; margin-bottom:1.5rem;">0250 XXX XXX</p>
+
+            
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">Rau<span>dent</span></div>
+        <p>© 2025 Raudent · Râmnicu Vâlcea, România</p>
+        <div class="footer-links">
+            <a href="#">Confidențialitate</a>
+            <a href="#">Termeni</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    btn.textContent = '✓ Cerere trimisă! Vă vom contacta în curând.';
+    btn.style.background = 'var(--sage)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Trimite cererea de programare';
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+
+  function toggleMenu() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .team-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
